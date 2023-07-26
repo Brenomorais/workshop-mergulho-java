@@ -1,3 +1,5 @@
+package br.com.lab.mergulhojava.aula1;
+
 public class CalculadoraJurosCompostoMeta {
     public static void main(String[] args) {
         double vaorAcumulado = 10000;

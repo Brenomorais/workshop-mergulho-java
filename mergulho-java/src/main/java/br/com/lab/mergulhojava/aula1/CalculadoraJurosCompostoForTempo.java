@@ -1,3 +1,5 @@
+package br.com.lab.mergulhojava.aula1;
+
 public class CalculadoraJurosCompostoForTempo {
     public static void main(String[] args) {
         double vaorAcumulado = 10000;

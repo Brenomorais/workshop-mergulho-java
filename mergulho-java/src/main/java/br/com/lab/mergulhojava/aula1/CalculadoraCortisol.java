@@ -1,3 +1,5 @@
+package br.com.lab.mergulhojava.aula1;
+
 public class CalculadoraCortisol {
     public static void main(String[] args) {
         double cortisol = 2;
