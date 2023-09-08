@@ -1,4 +1,7 @@
-package br.com.lab.mergulhojava.poo;
+package br.com.lab.mergulhojava.app;
+
+import br.com.lab.mergulhojava.banco.modelo.Conta;
+import br.com.lab.mergulhojava.banco.modelo.Pessoa;
 
 public class Principal {
     public static void main(String[] args) {
