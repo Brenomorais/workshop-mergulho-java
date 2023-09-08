@@ -2,31 +2,32 @@ package br.com.lab.mergulhojava.poo;
 
 public class Principal {
     public static void main(String[] args) {
-        Conta minhaConta = new Conta();
         Pessoa titular1 = new Pessoa();
         titular1.nome = "breno";
-        titular1.documento = "111111111";
+        titular1.documento = "123.456-00";
 
-        minhaConta.titular = titular1;
-        minhaConta.agencia = 1;
-        minhaConta.numero = 123;
-        minhaConta.saldo = 99.98;
+        Conta minhaConta = new Conta(titular1,123,987);
+        minhaConta.depositar(15_000);
+        minhaConta.sacar(1000, 1.99);
 
-        System.out.println("Numero conta: " + minhaConta.numero
+        System.out.println("Numero MINHA conta: " + minhaConta.numero
                 +" - Nome Titular: " + minhaConta.titular.nome
-                +" - Documento: " + minhaConta.titular.documento);
+                +" - Documento: " + minhaConta.titular.documento
+                +" - Saldo: " +minhaConta.saldo);
 
         Conta suaConta = new Conta();
 
         suaConta.titular = new Pessoa();
         suaConta.titular.nome = "magda";
-        suaConta.titular.documento = "22222222222222";
+        suaConta.titular.documento = "123.456-99";
         suaConta.agencia = 1;
         suaConta.numero = 321;
-        suaConta.saldo = 50.0;
+        suaConta.depositar(30_000);
+        suaConta.sacar(1000);
 
-        System.out.println("Numero conta: " + suaConta.numero
+        System.out.println("Numero SUA conta: " + suaConta.numero
                 +" - Nome Titular: " + suaConta.titular.nome
-                +" - Documento: " + suaConta.titular.documento);
+                +" - Documento: " + suaConta.titular.documento
+                +" - Saldo: " +suaConta.saldo);
     }
 }
