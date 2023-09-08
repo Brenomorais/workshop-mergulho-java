@@ -1,4 +1,4 @@
-package br.com.lab.mergulhojava.aula1;
+package br.com.lab.mergulhojava.basic;
 
 public class OlaMergulhador {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package br.com.lab.mergulhojava.aula2;
+package br.com.lab.mergulhojava.poo;
 
 public class Pessoa {
 

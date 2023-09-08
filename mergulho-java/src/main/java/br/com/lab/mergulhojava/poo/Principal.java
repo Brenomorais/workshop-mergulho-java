@@ -1,8 +1,8 @@
-package br.com.lab.mergulhojava.aula2;
+package br.com.lab.mergulhojava.poo;
 
-public class Principal2 {
+public class Principal {
     public static void main(String[] args) {
-        Conta2 minhaConta = new Conta2();
+        Conta minhaConta = new Conta();
         Pessoa titular1 = new Pessoa();
         titular1.nome = "breno";
         titular1.documento = "111111111";
@@ -16,7 +16,7 @@ public class Principal2 {
                 +" - Nome Titular: " + minhaConta.titular.nome
                 +" - Documento: " + minhaConta.titular.documento);
 
-        Conta2 suaConta = new Conta2();
+        Conta suaConta = new Conta();
 
         suaConta.titular = new Pessoa();
         suaConta.titular.nome = "magda";
