@@ -6,10 +6,10 @@ public class Conta {
     //variaveis de instancia caracterista da classe
 
     //Relacionamento tem um 1:1, uma conta tem um titular
-    Pessoa titular;
-    int agencia;
-    int numero;
-    double saldo;
+    private Pessoa titular;
+    private int agencia;
+    private  int numero;
+    private double saldo;
 
     Conta(){
     }
@@ -44,5 +44,25 @@ public class Conta {
     void sacar(double valor, double taxaSaque){
         //soma o valor do saque com a taxa virando um valor só a ser debitado da conta
         sacar(valor + taxaSaque);
+    }
+
+    public Pessoa getTitular() {
+        return titular;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
     }
 }
