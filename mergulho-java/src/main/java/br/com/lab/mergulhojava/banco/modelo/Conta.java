@@ -35,7 +35,7 @@ public class Conta {
 
     public void sacar(double valor){
         checkValue(valor);
-        if(saldo - valor < 0){
+        if(saldoDisponivel() - valor < 0){
             throw new IllegalThreadStateException("Saldo insuficiente.");
         }
         saldo = saldo - valor;
@@ -64,5 +64,9 @@ public class Conta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public double saldoDisponivel(){
+        return  getSaldo();
     }
 }
