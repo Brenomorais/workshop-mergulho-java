@@ -2,7 +2,7 @@ package br.com.lab.mergulhojava.banco.modelo;
 
 import java.util.Objects;
 
-public class Conta {
+public abstract class Conta {
     //variaveis de instancia caracterista da classe
 
     //Relacionamento tem um 1:1, uma conta tem um titular
@@ -45,6 +45,8 @@ public class Conta {
         //soma o valor do saque com a taxa virando um valor só a ser debitado da conta
         sacar(valor + taxaSaque);
     }
+
+    public abstract void debitarTarifaMensal();
 
     public Pessoa getTitular() {
         return titular;

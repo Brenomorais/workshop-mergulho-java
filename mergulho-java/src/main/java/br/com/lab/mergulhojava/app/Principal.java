@@ -20,9 +20,11 @@ public class Principal {
         minhaConta.depositar(15_000);
         minhaConta.sacar(1000);
         minhaConta.creditarRendimento(0.8);
+        minhaConta.debitarTarifaMensal();
 
         suaConta.depositar(5_000);
         suaConta.sacar(5_000);
+        suaConta.debitarTarifaMensal();
 
         caixaEletronico.imprimirSaldo(minhaConta);
         System.out.println("---------------------------------");
