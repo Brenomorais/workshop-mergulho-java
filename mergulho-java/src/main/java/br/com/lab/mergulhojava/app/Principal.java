@@ -1,6 +1,10 @@
 package br.com.lab.mergulhojava.app;
 
 import br.com.lab.mergulhojava.banco.modelo.*;
+import br.com.lab.mergulhojava.banco.modelo.atm.CaixaEletronico;
+import br.com.lab.mergulhojava.banco.modelo.pagamento.Boleto;
+import br.com.lab.mergulhojava.banco.modelo.pagamento.DocumentoPagavel;
+import br.com.lab.mergulhojava.banco.modelo.pagamento.Holerite;
 
 public class Principal {
     public static void main(String[] args) {
@@ -22,12 +26,32 @@ public class Principal {
         minhaConta.creditarRendimento(0.8);
         minhaConta.debitarTarifaMensal();
 
-        suaConta.depositar(5_000);
-        suaConta.sacar(5_000);
+        suaConta.depositar(15_000);
+        suaConta.sacar(15_000);
         suaConta.debitarTarifaMensal();
+        caixaEletronico.imprimirSaldo(suaConta);
+
+        //polimorfismo em ação: como Holerite é um DocumentoPagabel, documento pagavel pode receber um Holerite
+        DocumentoPagavel salarioFuncionario = new Holerite(titular1,100,120);
+        System.out.println("Holerite valor: " + salarioFuncionario.getValorTotal());
+        System.out.println("Holerite pago: " + salarioFuncionario.estaPago());
+        caixaEletronico.pagar(salarioFuncionario, minhaConta);
+        System.out.println("Holerite pago: " + salarioFuncionario.estaPago());
+
+        System.out.println("---------------------------------");
+
+        Boleto boletoEscola = new Boleto(titular2,200);
 
         caixaEletronico.imprimirSaldo(minhaConta);
-        System.out.println("---------------------------------");
-        caixaEletronico.imprimirSaldo(suaConta);
+
+        System.out.println("Boleto pago: " + boletoEscola.estaPago());
+        caixaEletronico.pagar(boletoEscola, minhaConta);
+        boletoEscola.imprimirRecibo();
+        System.out.println("Boleto pago: " + boletoEscola.estaPago());
+
+        caixaEletronico.imprimirSaldo(minhaConta);
+        caixaEletronico.estonarPagamento(boletoEscola, minhaConta);
+
+        caixaEletronico.imprimirSaldo(minhaConta);
     }
 }
