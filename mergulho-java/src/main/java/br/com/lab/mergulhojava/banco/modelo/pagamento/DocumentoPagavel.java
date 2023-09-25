@@ -1,7 +1,9 @@
 package br.com.lab.mergulhojava.banco.modelo.pagamento;
 
+import java.math.BigDecimal;
+
 public interface DocumentoPagavel {
-    public abstract  double getValorTotal();
+    public abstract BigDecimal getValorTotal();
     boolean estaPago();
     void quitarPagamento();
     default  void imprimirRecibo(){

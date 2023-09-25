@@ -1,5 +1,8 @@
 package br.com.lab.mergulhojava.banco.modelo;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class ContaInvestimento extends Conta{
     public ContaInvestimento(Pessoa titular, int agencia, int numero){
         super(titular,agencia,numero);
@@ -7,14 +10,17 @@ public class ContaInvestimento extends Conta{
 
     @Override
     public void debitarTarifaMensal() {
-        if(getSaldo() < 10_000){
-            sacar(9.99);
+        if(getSaldo().compareTo(new BigDecimal("10000")) < 0){
+            sacar(new BigDecimal("30"));
         }
     }
 
-    public void creditarRendimento(double percentualJuros){
-        double valorRendimentos = getSaldo() * percentualJuros / 100;
+    public void creditarRendimento(BigDecimal percentualJuros){
+        //double valorRendimentos = getSaldo().m* percentualJuros / 100;
+        BigDecimal valorRendimentos = getSaldo().multiply(percentualJuros)
+                .divide(new BigDecimal(100),2, RoundingMode.HALF_EVEN);
         depositar(valorRendimentos);
-        //System.out.println("Valor do rendimento:"+valorRendimentos);
+        // 2.524 = 2.52
+        // 2.256 = 2.53
     }
 }
