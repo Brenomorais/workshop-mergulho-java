@@ -1,5 +1,7 @@
 package br.com.lab.mergulhojava.banco.modelo;
 
+import br.com.lab.mergulhojava.banco.excecao.SaldoInsuficienteException;
+
 import java.util.Objects;
 
 public abstract class Conta {
@@ -36,7 +38,7 @@ public abstract class Conta {
     public void sacar(double valor){
         checkValue(valor);
         if(saldoDisponivel() - valor < 0){
-            throw new IllegalThreadStateException("Saldo insuficiente.");
+            throw new SaldoInsuficienteException("Saldo insuficiente.");
         }
         saldo = saldo - valor;
     };
