@@ -1,4 +1,4 @@
-package br.com.lab.mergulhojava.banco.stream;
+package br.com.lab.mergulhojava.banco.api.stream;
 
 import br.com.lab.mergulhojava.banco.modelo.Banco;
 import br.com.lab.mergulhojava.banco.modelo.Conta;
