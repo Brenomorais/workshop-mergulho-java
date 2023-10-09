@@ -37,7 +37,7 @@ public class TratamentoNull {
         contaOptional.ifPresent(conta -> System.out.println(conta.getSaldo()));
 
         //chamada encadeada
-        banco.buscarConta(123,222)
+        banco.buscarConta(123,22 2)
                 .ifPresent(conta -> System.out.println(conta.getSaldo()));
 
         Conta conta = banco.buscarConta(123,222)
